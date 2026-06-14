@@ -174,6 +174,67 @@ a:hover { text-decoration: underline; }
 }
 .btn--secondary:hover { border-color: rgba(11, 18, 32, 0.32); background: rgba(255, 255, 255, 0.8); }
 
+/* "See how we work" CTA — matches the hero secondary sweep button:
+   pill + blue round arrow circle on the right that grows to fill on hover */
+.btn--secondary.hww-cta {
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  border-radius: 999px;
+  padding: 14px 64px 14px 32px;   /* right room for the arrow circle */
+  transition: color 0.7s cubic-bezier(0.65,0,0.35,1),
+              border-color 0.7s cubic-bezier(0.65,0,0.35,1);
+}
+.btn--secondary.hww-cta::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  width: 46px;
+  height: 46px;
+  transform: translateY(-50%);
+  background: var(--brand-blue);
+  border-radius: 999px;
+  transition: width 0.7s cubic-bezier(0.65,0,0.35,1),
+              height 0.7s cubic-bezier(0.65,0,0.35,1);
+  z-index: -1;
+}
+.btn--secondary.hww-cta:hover::before,
+.btn--secondary.hww-cta:focus-visible::before {
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+}
+.btn--secondary.hww-cta:hover,
+.btn--secondary.hww-cta:focus-visible { color: #fff; border-color: var(--brand-blue); }
+.hww-cta .btn-arrow {
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  width: 46px;
+  height: 46px;
+  transform: translateY(-50%);
+  display: grid;
+  place-items: center;
+  z-index: 1;
+  color: #fff;
+  transition: transform 0.7s cubic-bezier(0.65,0,0.35,1);
+}
+.hww-cta .btn-arrow svg { width: 18px; height: 18px; }
+.hww-cta:hover .btn-arrow,
+.hww-cta:focus-visible .btn-arrow { transform: translateY(-50%) translateX(3px); }
+@media (prefers-reduced-motion: reduce) {
+  .btn--secondary.hww-cta, .btn--secondary.hww-cta::before { transition: none; }
+}
+
+/* Closing CTA (dark) secondary sweep — white outline/text so it's visible on ink
+   (overrides the light-hero ink treatment via higher specificity) */
+.cta.section--ink .btn--secondary.btn--sweep {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.30);
+  color: #fff;
+}
+.cta.section--ink .btn--secondary.btn--sweep .btn-arrow { color: #fff; }
+
 .section--ink .btn--secondary {
   background: rgba(255, 255, 255, 0.08);
   border-color: rgba(255, 255, 255, 0.16);
