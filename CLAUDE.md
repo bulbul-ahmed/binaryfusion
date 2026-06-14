@@ -51,12 +51,14 @@ Richer + bluer than the original "quiet" spec, but NOT a full dark theme.
   edge aligned to the nav. NO subtitle. Headline copy: "Where global enterprises forge
   what's next." (Dark variant B still exists, toggled `?hero=light` reversed — kept for
   reference, not default.)
-- **3D brand mark**: static PNG extracted from the 3D APNG source in `/3D/`
-  (`binary-fusion-mark-3d-static.png` gloss-blue · `-crystal-static.png` frosted-white).
-  Motion is code-driven, NOT the old inline SVG: CSS keyframe idle sway + JS mouse-tilt
-  toward cursor + cursor-follow drop-shadow light + hover scale/glow. transform/opacity
-  + filter only, frozen on reduced-motion. Source is 1024px → keep display ≲ that; a
-  2048px re-export is the fix for crisp retina at large sizes.
+- **3D brand mark = live Three.js (WebGL)** — owner-approved exception to the no-library
+  / ≤14KB-JS rule, for this hero component only. `assets/js/hero-mark.js` (ES module)
+  builds the BF arrows + ring as extruded `MeshPhysicalMaterial` glass with **iridescent
+  rainbow sheen** (palette exception — owner-approved); idle float + pointer-parallax
+  tilt; frozen first-frame on reduced-motion. Three.js r0.167 is **vendored locally** at
+  `assets/js/vendor/three.module.js` (NO runtime CDN). Colors are editable in hero-mark.js
+  → `ENV_SPOTS` (the reflected rainbow) + `MARK_COLOR`. Renders into `#hero-mark canvas`.
+  (Prior static-PNG/APNG mark kept in `/3D/` + `assets/img/brand/` for reference.)
 - **Body = light but richer**: `.section--tint` (soft #F4F9FE→paper gradient + faint
   azure corner accent) on alternating light sections for rhythm; icon tiles
   (`.card-icon`, 48px rounded square, rgba brand-blue bg, 1.5px line SVG) on
