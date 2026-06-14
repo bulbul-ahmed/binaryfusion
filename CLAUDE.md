@@ -44,10 +44,19 @@ surfaces per viewport; blur 12px on mobile.
 ## Aesthetic direction (owner-approved, overrides parts of original brief)
 
 Richer + bluer than the original "quiet" spec, but NOT a full dark theme.
-- **Hero = dark (variant B)**: ink + blue radial mesh bg, white H1, dark-glass chips,
-  Clutch rating badge, and the **animated brand mark** (icon from logo) on the right —
-  glowing trace arc circling the ring, two orbit rings with dots, breathing gradient
-  glow, slow float. Pure CSS/SVG, transform/opacity only, frozen on reduced-motion.
+- **Hero = light (current, owner-approved)**: soft #F4F9FE→paper tint bg + faint azure
+  corner glow, ink H1 (`Inter 700`, ~clamp 2.4→4rem, 3-line break), slate eyebrow,
+  light-glass chips, Clutch badge, sweep-fill CTAs (pure-round 46px arrow circle, white
+  on primary / blue on secondary), and the **3D brand mark** large on the right, right
+  edge aligned to the nav. NO subtitle. Headline copy: "Where global enterprises forge
+  what's next." (Dark variant B still exists, toggled `?hero=light` reversed — kept for
+  reference, not default.)
+- **3D brand mark**: static PNG extracted from the 3D APNG source in `/3D/`
+  (`binary-fusion-mark-3d-static.png` gloss-blue · `-crystal-static.png` frosted-white).
+  Motion is code-driven, NOT the old inline SVG: CSS keyframe idle sway + JS mouse-tilt
+  toward cursor + cursor-follow drop-shadow light + hover scale/glow. transform/opacity
+  + filter only, frozen on reduced-motion. Source is 1024px → keep display ≲ that; a
+  2048px re-export is the fix for crisp retina at large sizes.
 - **Body = light but richer**: `.section--tint` (soft #F4F9FE→paper gradient + faint
   azure corner accent) on alternating light sections for rhythm; icon tiles
   (`.card-icon`, 48px rounded square, rgba brand-blue bg, 1.5px line SVG) on
