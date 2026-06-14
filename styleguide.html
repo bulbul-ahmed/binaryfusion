@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Styleguide — Binary Fusion</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <style>
+    /* styleguide-only scaffolding */
+    .sg-section { padding-block: 64px; border-bottom: 1px solid var(--border); }
+    .sg-label { font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--slate); margin-bottom: 24px; font-weight: 500; }
+    .sg-row { display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start; }
+    .sg-swatch { width: 160px; border: 1px solid var(--border); border-radius: var(--radius-card); overflow: hidden; font-size: 13px; }
+    .sg-swatch i { display: block; height: 96px; }
+    .sg-swatch p { padding: 8px 16px; margin: 0; }
+    .sg-dark { background: var(--ink); padding: 48px; border-radius: var(--radius-card); }
+    .sg-atmo { position: relative; height: 320px; border-radius: var(--radius-card); overflow: hidden; border: 1px solid var(--border); }
+  </style>
+</head>
+<body>
+  <main class="container" style="padding-block: 96px;">
+    <h1>Styleguide</h1>
+    <p>Internal, unlinked. Every component used on the site, verified for spacing and contrast before pages were built.</p>
+
+    <section class="sg-section">
+      <p class="sg-label">Color tokens</p>
+      <div class="sg-row">
+        <div class="sg-swatch"><i style="background:#0B1220"></i><p>--ink #0B1220</p></div>
+        <div class="sg-swatch"><i style="background:#FAFAF7"></i><p>--paper #FAFAF7</p></div>
+        <div class="sg-swatch"><i style="background:#FFFFFF"></i><p>--surface #FFFFFF</p></div>
+        <div class="sg-swatch"><i style="background:#5B6472"></i><p>--slate #5B6472</p></div>
+        <div class="sg-swatch"><i style="background:#00B1FF"></i><p>--brand-azure (decoration only)</p></div>
+        <div class="sg-swatch"><i style="background:#007ABF"></i><p>--brand-blue (buttons/UI)</p></div>
+        <div class="sg-swatch"><i style="background:#0046A6"></i><p>--brand-deep (dark accents)</p></div>
+        <div class="sg-swatch"><i style="background:#006DA9"></i><p>--accent-text (links)</p></div>
+        <div class="sg-swatch"><i style="background:linear-gradient(135deg,#00B1FF,#007ABF 55%,#0046A6)"></i><p>--brand-gradient (orbs, frame glow, logo only)</p></div>
+      </div>
+    </section>
+
+    <section class="sg-section">
+      <p class="sg-label">Type scale</p>
+      <h1>H1 — We build the software your business runs on.</h1>
+      <h2>H2 — Platforms with real operations inside them.</h2>
+      <h3>H3 — Learning &amp; assessment platforms</h3>
+      <span class="eyebrow">Eyebrow — custom software development</span>
+      <p>Body 18px/1.7 slate on paper, capped at 68ch, left-aligned, <a href="#">inline link in --accent-text</a>. Web platforms, mobile apps, and SaaS products — designed, built, and supported by a senior engineering team, with live systems running today in Australia, the UK, the US, and the UAE.</p>
+    </section>
+
+    <section class="sg-section">
+      <p class="sg-label">Buttons — two styles, no third</p>
+      <div class="sg-row">
+        <a class="btn btn--primary" href="#">Book an intro call</a>
+        <a class="btn btn--secondary" href="#">See the work</a>
+        <a class="btn btn--primary btn--sm" href="#">Book a call</a>
+      </div>
+      <div class="sg-dark section--ink" style="margin-top:32px;">
+        <div class="sg-row">
+          <a class="btn btn--primary" href="#">Book an intro call</a>
+          <a class="btn btn--secondary glass glass--dark" href="#">Or write to us instead</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="sg-section">
+      <p class="sg-label">Glass material + live atmosphere swatch</p>
+      <div class="sg-atmo">
+        <div class="atmosphere" aria-hidden="true">
+          <i class="orb orb--a" style="width:420px;height:420px;"></i>
+          <i class="orb orb--c" style="width:360px;height:360px;"></i>
+        </div>
+        <div style="position:relative; display:flex; gap:24px; align-items:center; justify-content:center; height:100%;">
+          <div class="capsule glass" style="max-width:420px; margin:0;">
+            <span class="brand"><img src="/assets/img/brand/logo-cropped.svg" alt="Binary Fusion" width="157" height="40"></span>
+            <a class="btn btn--primary btn--sm" href="#" style="margin-left:auto;">Book a call</a>
+          </div>
+        </div>
+      </div>
+      <ul class="chip-row glass" style="margin-top:32px;">
+        <li><strong>Since 2020</strong><small>building for global clients</small></li>
+        <li><strong>4 countries</strong><small>with our platforms in production</small></li>
+        <li><strong>★ 5.0</strong><small>verified rating on Clutch</small></li>
+        <li><strong>Certified</strong><small>Laravel &amp; AWS engineers</small></li>
+      </ul>
+      <p style="margin-top:24px;">Budget: ≤3 backdrop-filter surfaces per viewport. The chip row is one glass surface, not four.</p>
+    </section>
+
+    <section class="sg-section">
+      <p class="sg-label">Screenshot frame — the only box-shadow on the site</p>
+      <div style="max-width:560px;">
+        <figure class="frame">
+          <div class="frame-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+          <svg class="ph" viewBox="0 0 800 450" role="img" aria-label="Placeholder screenshot slot">
+            <rect x="0.5" y="0.5" width="799" height="449" fill="#EFEFEC" stroke="rgba(11,18,32,0.08)"/>
+            <text x="400" y="229" text-anchor="middle" font-size="20">example-slot.png</text>
+          </svg>
+        </figure>
+      </div>
+    </section>
+
+    <section class="sg-section">
+      <p class="sg-label">Card (opaque — glass banned on content)</p>
+      <div class="grid grid--2" style="max-width:760px;">
+        <article class="card">
+          <div class="card-shot">
+            <svg class="ph" viewBox="0 0 800 450" aria-hidden="true">
+              <rect x="0.5" y="0.5" width="799" height="449" fill="#EFEFEC" stroke="rgba(11,18,32,0.08)"/>
+              <text x="400" y="229" text-anchor="middle" font-size="20">fra-dashboard.png</text>
+            </svg>
+          </div>
+          <h3>Learning &amp; assessment platforms</h3>
+          <p>Course engines, timed examinations, progress tracking, certification — the machinery serious training businesses run on.</p>
+          <a class="arrow-link" href="#">See: Fire Recruitment Australia</a>
+        </article>
+        <article class="card">
+          <h3>Booking &amp; operations systems</h3>
+          <p>Reservations, fleet and inventory management, rate engines, reconciliation, and reporting built around how a business actually operates.</p>
+          <a class="arrow-link" href="#">See: T-Ranz Rentals</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="sg-section">
+      <p class="sg-label">Stat block — static numbers, never counters</p>
+      <div class="sg-row">
+        <div class="stat"><strong>107</strong><span>vehicles in the managed fleet</span><small>via the T-Ranz platform</small></div>
+        <div class="stat"><strong>5.0</strong><span>verified rating</span><small>via Clutch, verified</small></div>
+      </div>
+    </section>
+
+    <section class="sg-section">
+      <p class="sg-label">Quote block</p>
+      <figure class="pull-quote">
+        <blockquote><p>“The team has saved us time and reduced errors.”</p></blockquote>
+        <figcaption><strong>Secretary, T-Ranz Rentals</strong> — Sydney, Australia · Verified review on Clutch · Client since 2023</figcaption>
+      </figure>
+    </section>
+
+    <section class="sg-section">
+      <p class="sg-label">Process strip + line draw (scroll to see the line draw)</p>
+      <div class="process">
+        <svg class="process-line" viewBox="0 0 100 2" preserveAspectRatio="none" aria-hidden="true">
+          <line class="track" x1="0" y1="1" x2="100" y2="1" pathLength="100"/>
+          <line class="draw" x1="0" y1="1" x2="100" y2="1" pathLength="100"/>
+        </svg>
+        <ol class="process-steps">
+          <li><span class="process-num">01</span><p><strong>Discovery</strong> — we map the problem and write the scope.</p></li>
+          <li><span class="process-num">02</span><p><strong>Design</strong> — flows and interfaces, approved before code.</p></li>
+          <li><span class="process-num">03</span><p><strong>Build</strong> — two-week sprints, a live staging link, a demo every week.</p></li>
+          <li><span class="process-num">04</span><p><strong>Run</strong> — launch, monitoring, and a roadmap that keeps going.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="sg-section">
+      <p class="sg-label">Expanding service panels (click a rail; stacked below 1024px)</p>
+      <div class="xpanels">
+        <article class="xpanel is-active">
+          <button class="xpanel__rail" type="button" aria-expanded="true" aria-controls="sgxp-1" tabindex="-1">
+            <span class="xpanel__label">Custom software development</span>
+            <span class="xpanel__plus" aria-hidden="true">+</span>
+          </button>
+          <div class="xpanel__body" id="sgxp-1">
+            <h3>Custom software development</h3>
+            <p>Enterprise web platforms, portals, and systems built around your operating model.</p>
+            <a class="arrow-link" href="#">Custom software development</a>
+          </div>
+        </article>
+        <article class="xpanel">
+          <button class="xpanel__rail" type="button" aria-expanded="false" aria-controls="sgxp-2">
+            <span class="xpanel__label">Mobile app development</span>
+            <span class="xpanel__plus" aria-hidden="true">+</span>
+          </button>
+          <div class="xpanel__body" id="sgxp-2">
+            <h3>Mobile app development</h3>
+            <p>iOS, Android, and Flutter apps shipped to both stores, including the review process.</p>
+            <a class="arrow-link" href="#">Mobile app development</a>
+          </div>
+        </article>
+        <article class="xpanel">
+          <button class="xpanel__rail" type="button" aria-expanded="false" aria-controls="sgxp-3">
+            <span class="xpanel__label">UI/UX design</span>
+            <span class="xpanel__plus" aria-hidden="true">+</span>
+          </button>
+          <div class="xpanel__body" id="sgxp-3">
+            <h3>UI/UX design</h3>
+            <p>Product design and enterprise dashboards, by designers who work next to the engineers.</p>
+            <a class="arrow-link" href="#">UI/UX design</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="sg-section">
+      <p class="sg-label">Service row</p>
+      <div class="svc-rows" style="max-width:880px;">
+        <a class="svc-row" href="#"><strong>Custom software development</strong><span>Enterprise web platforms, portals, and systems built around your operating model.</span></a>
+        <a class="svc-row" href="#"><strong>Mobile app development</strong><span>iOS, Android, and Flutter apps shipped to both stores, including the review process.</span></a>
+      </div>
+    </section>
+
+    <section class="sg-section">
+      <p class="sg-label">FAQ — native details/summary</p>
+      <div class="faq">
+        <details>
+          <summary>Who owns the code?</summary>
+          <p>You do. Repository, infrastructure, IP — all in your name from day one. If you ever leave, you take everything with you.</p>
+        </details>
+        <details>
+          <summary>How long does it take?</summary>
+          <p>Most platforms ship a first production version in 12–24 weeks. We'd rather launch a tight version in four months and grow it than disappear for a year.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="sg-section">
+      <p class="sg-label">Form fields (opaque, visible labels, inline validation)</p>
+      <form action="#" style="max-width:480px;" novalidate>
+        <div class="form-field">
+          <label for="sg-name">Name</label>
+          <input id="sg-name" name="name" type="text" required>
+          <p class="field-error">Please enter your name.</p>
+        </div>
+        <div class="form-field is-invalid">
+          <label for="sg-email">Work email</label>
+          <input id="sg-email" name="email" type="email" required>
+          <p class="field-error">Please enter a valid email address.</p>
+        </div>
+        <div class="form-field">
+          <label for="sg-select">What are you building?</label>
+          <select id="sg-select" name="building"><option>Web platform</option><option>Mobile app</option></select>
+        </div>
+        <button class="btn btn--primary" type="submit">Send message</button>
+      </form>
+    </section>
+
+    <section class="sg-section" style="border-bottom:0;">
+      <p class="sg-label">Mobile sticky CTA bar (shown on service &amp; case pages ≤767px — resize to preview)</p>
+      <div class="sticky-cta glass" style="display:block; position:static;">
+        <a class="btn btn--primary" href="#">Book an intro call</a>
+      </div>
+    </section>
+  </main>
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>
